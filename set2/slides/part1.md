@@ -26,10 +26,9 @@ Some rules
 
 ###Why Python?
 
-* Suitable for beginners, yet used by professionals
+* Beginner friendly &amp; used by professionals
 * Readable, maintainable code
-* Rapid rate of development
-* Few "magical" side-effects
+* Rapid rate of development (high level language)
 * Variety of applications
 Note: Block 1 begins - 25 minutes
 @@@
@@ -37,9 +36,9 @@ Note: Block 1 begins - 25 minutes
 ###What is Python used for?
 
 * System Administration (Fabric, Salt, Ansible)
-* 3D animation and image editing (Maya, Blender, Gimp)
-* Scientific computing (numpy, scipy)
-* Web development (Django, Flask)
+* 3D animation &amp; Image Editing (Maya, Blender, Gimp)
+* Scientific Computing (Numpy, SciPy, iPython)
+* Web Development (Django, Flask, Falcon)
 * Game Development (Civilization 4, EVE Online)
 @@@
 
@@ -50,26 +49,32 @@ Note: Block 1 begins - 25 minutes
 * Canonical and Red Hat
 * Google
 * NASA
+* Sprout Social
 Note: Caktus uses Python
 @@@
 
 ###What is programming?</h3>
-
-* Teaching the computer to do a task
-* A program is made of one or more files of code, each of which solve part of the overall task
+* A series of commands a computer follows to complete a task
+<!-- * Computers are universal machines -->
+* Programs are made of 1+ files of code, each solving part of the overall task
 * Programming code is human readable but also needs a form that the computer can run directly. This form is not human readable.
-* To create the form of code the computer can use, we use the Python <a href="http://en.wikipedia.org/wiki/Interpreter_(computing)">interpreter</a>. Other languages use other interpreters or a <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a>
-* Don't focus on what's "under the hood" for now. We will "drive the car" first
-* In other words, there are many layers to the onion. We start at one layer and slowly move toward layers that are beneath or above us
+
+@@@
+
+###What is programming?</h3>
+
+* Today we will use the Python <a href="http://en.wikipedia.org/wiki/Interpreter_(computing)">interpreter</a> to create code a computer understands. Other languages use different interpreters or a <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a>
+* "Drive the car" vs. "What's under the hood?"
+* There are many layers to the onion. We start at one layer and slowly move toward layers that are beneath or above us.
 @@@
 
 ###Command line, Python Shell, Text Editors</h3>
 
 Program      | Description
 -------------|----------
-Terminal     | A program that has a command line interface and issues commands to the operating system.
-Python Shell | A command line program that runs inside of the terminal, takes Python code as input, interprets it, and prints out any results.
-Text Editor  | A program that opens text files and allows the user to edit and save them. (Different than a word processor).
+Terminal     |   A program that has a command line interface and issues commands to the operating system.
+Python Shell |   A command line program that runs inside of the terminal, takes Python code as input, interprets it, and prints out any results.
+Text Editor  |   A program that opens text files and allows the user to edit and save them. (Different than a word processor).
 @@@
 
 ###Example Text Editors
@@ -85,13 +90,13 @@ All       | Sublime Text, Vim, Emacs
 ###Let's Develop It
 Let's setup our computer for Python programming
 
-* Let's install a text editor - [Install Sublime Text 3](http://www.sublimetext.com/3)
-* [Install Python](http://www.python.org/download/) - (This step is for Windows users only. GNU/Linux and MacOSX come with Python installed)
+* Let's install a text editor - [Install Sublime Text 3](http://www.sublimetext.com/3) (This is written in Python!)
+* [Install Python 2.7.9](http://www.python.org/download/) - (This step is for Windows users only. GNU/Linux and MacOSX come with Python installed)
 * (Windows only): After installing Python, open the "powershell" program and type:
 <pre style="width: 100%">[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python27", "User")</pre>
 * Locate and run the terminal program. Type 'python' and hit enter.
 * More setup instructions are available: [here](http://learnpythonthehardway.org/book/ex0.html)
-* (You can, but don't have to install the other text editors recommended in this guide)
+
 Note: 15 minutes
 @@@
 
@@ -103,10 +108,11 @@ Note: 30 minutes
 
 Open up your terminal and type 'python' <!-- .element class="left-align" -->
 
-* Follow along with the examples in the slides. Type them in! <!-- .element class="fragment" -->
-* Feel free to explore as well. You will not accidentally break things <!-- .element class="fragment" -->
-* $ means you are in the terminal (not python). >>> means you are in python <!-- .element class="fragment" -->
-* Type exit() to leave python and return to the terminal. <!-- .element class="fragment" -->
+* Follow along with the slide examples! <!-- .element class="fragment" -->
+* Feel free to explore. You will not break the internet, the computer, the world. (Promise.) <!-- .element class="fragment" -->
+* Command line prompt: $ for terminal (not Python). <!-- .element class="fragment" -->
+* Command line prompt: >>> for Python <!-- .element class="fragment" -->
+* Inside Python Shell type exit() to leave &amp; return to Terminal. <!-- .element class="fragment" -->
 
 @@@
 
@@ -154,13 +160,23 @@ Open up your terminal and type 'python' <!-- .element class="left-align" -->
 ```
 @@@
 
-###Data types
-* Variables are names of objects <!-- .element class="fragment" -->
-* Among other things, variables are used to represent something that can't be known until the program is run <!-- .element class="fragment" -->
-* Objects always have a "type" <!-- .element class="fragment" -->
-* The type of an object helps define what it can do <!-- .element class="fragment" -->
-* The type can be found using: type() <!-- .element class="fragment" -->
+###Variables
+
+* We store our objects in variables
+* Variables represent values not known until run time
+* Pro Tip: Use clear and meaningful names
+
+```python
+   super_secret_thing = "I'm not a secret!"
+   not_secret_message = "I'm not a secret!"
+```
+@@@
+
+###Data Types
+* Objects have a "type" <!-- .element class="fragment" -->
+* An object's type can be found using type() <!-- .element class="fragment" -->
 * type() is a function. We call it by using parenthesis and pass it an object by placing the object inside the parenthesis <!-- .element class="fragment" -->
+
 ```python
 >>> print type(4)
 <type 'int'>
@@ -172,28 +188,71 @@ Open up your terminal and type 'python' <!-- .element class="left-align" -->
 >>> print type(3.5)
 <type 'float'>
 ```
+<!-- .element class="fragment" -->
+
+@@@
+
+###What does the type do?
+* The type helps define what an object can do <!-- .element class="fragment" -->
+* To see all of object's behaviors use the dir() function <!-- .element class="fragment" -->
+
+```python
+my_string = "hello GDI Chicago"
+dir(my_st) #Returns list of all actions that object can do
+
+```
+<!-- .element class="fragment" -->
 @@@
 
 ###Data types - continued ...
-* Objects can be used with a set of operators <!-- .element class="fragment" -->
+* Objects can be used with operators <!-- .element class="fragment" -->
 * An int or float can be used with any of: +, -, *, / <!-- .element class="fragment" -->
 * A string can be used with any of: +, * <!-- .element class="fragment" -->
-* What happens if we try to use division or subtraction with a string? <!-- .element class="fragment" -->
+* Try using division or subtraction with a string. <!-- .element class="fragment" -->
+* What happens? <!-- .element class="fragment" -->
 ```python
 >>> print "Spam" / "eggs"
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unsupported operand type(s) for /: 'str' and 'str'
 ```
+<!-- .element class="fragment" -->
 @@@
 
+###Collections
+
+* Collections hold other objects.
+* Arrays - 0 based (1st element is at position 0)
+```python
+my_num_array = [1,2,3]
+my_num_array.append(4)
+my_mixed_array = ["hello",3,2.31]
+my_mixed_array[0]
+```
+* Dictionaries - has a 'key' and a value, use the 'key' to get the value
+
+```python
+my_empty_dict = {}
+my_pet_types = {'Tito':'Cat', 'Jesus':'Cat', 'Boris':'Shiba Inu'}
+my_pet_types['Monty'] = 'Python'
+my_pet_types['Monty'] 
+```
+@@@
 
 ###Errors
 
-* There are different kinds of errors that can occur. We've seen a few of these so far <!-- .element class="fragment" -->
-* A runtime error results in an Exception. An Exception gives us some information about the nature of the error and how to correct it <!-- .element class="fragment" -->
-* One type of exception is a SyntaxError. This results when our code can not be evaluated because it is incorrect at a syntactic level. In other words, we are not following the "rules" of the language. <!-- .element class="fragment" -->
-* Some other examples are the TypeError and NameError exceptions. <!-- .element class="fragment" -->
+* There are different kinds of errors that can occur. We've seen a few of these so far: <!-- .element class="fragment" -->
+* Syntax Error: code that can't be evaluated because of incorrect syntax. In other words, we are not following the "rules" of the language. <!-- .element class="fragment" -->
+```python
+>>> while True print 'Hello world'
+  File "<stdin>", line 1, in ?
+    while True print 'Hello world'
+                   ^
+SyntaxError: invalid syntax
+```
+* Exceptions: runtime errors that give information about the type of the error &amp; how to correct it <!-- .element class="fragment" -->
+* Examples of exceptions: TypeError &amp; NameError <!-- .element class="fragment" -->
+
 @@@
 
 ###Errors - continued ...
@@ -226,12 +285,14 @@ Try each of the following commands in turn:
 
 Command         | Short for               | Description
 ----------------|-------------------------|-------------
-pwd             | Print working directory | Displays what folder you are in
-ls              | List                    | Displays the files and folders in the current folder
-cd <folder>     | Change Directory        | Change to another folder, where <folder> is the target
-cat <filename>  | Concatenate k           | Prints the contents of the file
-file <filename> | File                    | Displays the type of the file
+pwd             | Print working directory | Shows folder you are in
+ls              | List                    | Shows files &amp; folders in the current folder
+dir (Windows) | List folders in the current folder | Shows files &amp; folders in the current folder
+cd folder     | Change Directory        | Change to another folder
+cat filename  | Concatenate k           | Prints file contents
+type filename (Windows)  | Type k           | Prints file contents
 
+[Window &amp; Unix(Mac) Equivalent Commands](http://www.lemoda.net/windows/windows2unix/windows2unix.html)
 Note: Block 3 begins, 30 minutes
 @@@
 
@@ -254,7 +315,7 @@ Now that the folders are made, we only have to use this in the future:
 @@@
 
 ###The Text Editor
-Open sublime text.
+Open sublime text:
 
 * Click File, then Open folder. Navigate to the gdipython folder we created and click "open"
 * In the text editor, enter the following:
@@ -266,7 +327,7 @@ print 'This is a Python program'
 * Click file, save as. Type 'program.py' and click ok.
 
 ---
-Open a terminal and type
+Open a terminal and type:
 ```bash
 $ cd
 $ cd gdipython
