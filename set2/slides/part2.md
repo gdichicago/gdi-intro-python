@@ -22,7 +22,7 @@
 ###Boolean Expressions
 We can tell the computer to compare values and return True or False. These are called *Boolean expressions*
 
-* Test for equality by using ==. (This is not the same as using =)
+* Test for equality by using ==. (== is different than =)
 * Test for greater than and less than using > and <
 ```python
 >>> a = 5
@@ -82,7 +82,7 @@ else:
 ```
 @@@
 
-###Indentation
+###Indentation (Whitespace!)
 
 In Python, **blocks** begin when text is indented and ends when it returns to the previous indentation level.
 
@@ -205,7 +205,7 @@ while n > 1:
 print "The factorial of " + input_value + " is:"
 print result
 ```
-N.B. - This implementation does not work for negative numbers. Why? <!-- .element class="fragment" -->
+- This implementation does not work for negative numbers. Why? <!-- .element class="fragment" -->
 @@@
 
 ###For loops
@@ -256,11 +256,9 @@ Note: Let's Develop It - 15 minutes
 
 ###Functions
 
-Also known as "procedures"
+Also known as "procedures"; functions are named units of code that perform a specific task
 
-- A named unit of code that performs a specific task
-
-When one uses a function, one makes a function **call**
+Using a function == making a function **call**
 
 We have already made a function call when using the type, int, or float functions
 
@@ -285,7 +283,7 @@ Note: Block 3 - 40 Minutes
 <type 'int'>
 ```
 
-A function can take **arguments** (sometimes called **parameters**)
+A function can take **arguments** (also called **parameters**)
 
 In the example above, the variable `a` is passed as an argument to the function `type`
 
@@ -311,9 +309,9 @@ def print_greeting(name):
 
 The function definition has the following parts
 
-* The <strong>def</strong> keyword signifies we are defining a function</li>
-* The name of the function being defined - `print_greeting`</li>
-* The arguments in parentheses - `name`</li>
+* <strong>def</strong> - we are defining a function</li>
+* `print_greeting` - The name of the function being defined </li>
+* `name` - The arguments in parentheses</li>
 * The function <strong>body</strong>, which is a block of indented code that executes when the function is called. - `print "Hi", name...`</li>
 @@@
 
@@ -321,7 +319,7 @@ The function definition has the following parts
 
 A function can also **return** a value
 
-To do this, one uses the **return** keyword
+To do this, use the **return** keyword
 ```
 def plus_5(x):
     return x + 5
@@ -329,9 +327,7 @@ def plus_5(x):
 y = plus_5(4)
 ```
 
-* This allows us to call a function to obtain a value for later use. (Not the same as printing the value)</li>
-* In this example, the function call `plus_5(4)` evaluates to 9, and y is set to this value</li>
-* To determine what a function will return, use the <strong>substitution method</strong>.</li>
+* Return allows us to call a function &amp; obtain a value for later use. (Not the same as printing)</li>
 * If return is not used, the function returns <strong>None</strong></li>
 @@@
 
@@ -436,19 +432,17 @@ Note: Let's Develop It 25 minutes
 
 
 ###Let's Develop It
-* Improve our adventure game by preventing the player from walking through
-walls
+* Improve our adventure game by preventing the player from walking through walls
 
 * The beginning of this program has been started and is available here as
-[game2.py](http://calebsmith.github.io/gdi-intro-python/examples/game2.py)
+[game2.py](http://lorenanicole.github.io/gdi-intro-python/examples/game2.py)
 
 * You'll also need to download the board.dat file to the same folder.
- [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
+ [board.dat](http://lorenanicole.github.io/gdi-intro-python/examples/board.dat)
 
 * If you are stuck ask the teacher or a TA for help.
 
-* If you finish early, consider adding a feature of your own or helping your
- neighbor
+* If you finish early, consider adding a feature of your own or helping your neighbor
 
 Note: Let's Develop It 30 minutes
 @@@
