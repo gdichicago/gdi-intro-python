@@ -1,6 +1,6 @@
 # Intro to Python
 
-The slides for this course can be viewed [here](http://calebsmith.github.io/gdi-intro-python/#/)
+The slides for this course can be viewed [here](http://gdichicago.github.io/gdi-intro-python/#/)
 
 This is the Girl Develop It RDU Intro to Python course. Material is loosely based on Think Python by Allen B. Downey and written by Caleb Smith
 
